@@ -6,8 +6,8 @@
  //Importing database
  require_once('dbConnect.php');
  
- //Creating sql query with where clause to get an specific employee
- $sql = "SELECT * FROM employee WHERE id=$id";
+ //Creating sql query with where clause to get an specific site
+ $sql = "SELECT * FROM sites WHERE id=$id";
  
  //getting result 
  $r = mysqli_query($con,$sql);
@@ -16,10 +16,12 @@
  $result = array();
  $row = mysqli_fetch_array($r);
  array_push($result,array(
- "id"=>$row['id'],
- "name"=>$row['name'],
- "desg"=>$row['designation'],
- "salary"=>$row['salary']
+	 "id"=>$row['id'],
+	 "name"=>$row['name'],
+	 "desg"=>$row['designation'],
+	 "sal"=>$row['salary'],
+	 "tel"=>$row['tel'],
+	 "rating"=>$row['rating']
  ));
  
  //displaying in json format 
